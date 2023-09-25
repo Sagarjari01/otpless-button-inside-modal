@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import LoginModal from "./LoginModal";
 
 const Home = () => {
   useEffect(() => {
@@ -23,19 +24,9 @@ const Home = () => {
     modalContainer.style.display = 'flex';
   };
 
-  const closeModal = (e) => {
-    const modalContainer = document.getElementById('modalContainer');
-    if (e.target === modalContainer) {
-      modalContainer.style.display = 'none';
-    }
-  };
   return (
     <div>
-      <div class="modal-container" id="modalContainer" onClick={closeModal}>
-        <div class="modal">
-          <div className="button-otpless" id="otpless" custom="true">OTPless</div>
-        </div>
-      </div>
+      <LoginModal />
       <button id="loginBtn" onClick={openModal}>Login</button>
     </div>
   );
